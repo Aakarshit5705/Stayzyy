@@ -34,7 +34,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // ---------------------- Middleware -----------------
 server.use(cookieParser());
-server.use(cors({ credentials: true, origin: "http://localhost:5174" }));
+server.use(cors({ credentials: true, origin: "https://stayzyy-frontend.onrender.com" }));
 server.use(express.json());
 server.use('/uploads', express.static(__dirname + '/uploads'));
 
