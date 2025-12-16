@@ -106,8 +106,8 @@ server.post('/login', async (req, res) => {
                 if (err) throw err;
                 res.cookie('token', token, {
                     httpOnly: true,
-                    sameSite: 'lax',
-                    secure: false,
+                    sameSite: 'none',
+                    secure: true,
                 }).json(userDoc);
             }
         );
