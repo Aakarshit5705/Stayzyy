@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import PlacesPage from "./placesPage.jsx";
 import AccountNav from "../AccountNav.jsx";
-import "dotenv/cofig"
+
 
 export default function AccountPage(){
     const[redirect,setRedirect]=useState(null);
