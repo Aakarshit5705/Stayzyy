@@ -43,7 +43,7 @@ export default function PhotoGallery({place}){
               className="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl border border-gray-700"
             >
               <img
-                src={"http://localhost:4000/uploads/" + photo}
+                src={`${import.meta.env.VITE_API_URL}/uploads/${photo}`}
                 alt=""
                 className="w-full h-[400px] object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
               />
@@ -64,7 +64,7 @@ export default function PhotoGallery({place}){
                     {place.photos?.[0] && (
                         <img onClick={() => setShowAllPhotos(true)} 
                              className="w-full h-full object-cover cursor-pointer aspect-video lg:aspect-auto transition-transform hover:scale-105 duration-300" 
-                             src={`http://localhost:4000/uploads/${place.photos[0]}`} alt="Main property view"/>
+                             src={`${import.meta.env.VITE_API_URL}/uploads/${place.photos[0]}`} alt="Main property view"/>
                     )}
                 </div>
                 {/* Small Image Grid */}
@@ -73,7 +73,7 @@ export default function PhotoGallery({place}){
                         <div key={index} className="overflow-hidden">
                              <img onClick={() => setShowAllPhotos(true)} 
                                   className="w-full h-full object-cover cursor-pointer aspect-square transition-transform hover:scale-105 duration-300" 
-                                  src={`http://localhost:4000/uploads/${photo}`} alt={`View ${index + 2}`}/>
+                                  src={`${import.meta.env.VITE_API_URL}/uploads/${photo}`} alt={`View ${index + 2}`}/>
                         </div>
                     ))}
                 </div>

@@ -44,7 +44,7 @@ export default function IndexPage() {
                             <div className="relative w-full h-64 overflow-hidden rounded-t-3xl">
                                 {place.photos?.[0] && (
                                     <img
-                                        src={"http://localhost:4000/uploads/" + place.photos[0]}
+                                        src={`${import.meta.env.VITE_API_URL}/uploads/` + place.photos[0]}
                                         alt={place.title}
                                         className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-105 group-hover:rotate-1"
                                     />
