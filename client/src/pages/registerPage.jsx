@@ -13,7 +13,7 @@ export default function RegisterPage() {
         e.preventDefault();
         
         // Use toast.promise to handle the entire registration flow
-        const registerPromise = axios.post("/register", {
+        const registerPromise = axios.post(`${import.meta.env.VITE_API_URL}/register`, {
             name,
             email,
             password,

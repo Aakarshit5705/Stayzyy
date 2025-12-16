@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import PlacesPage from "./placesPage.jsx";
 import AccountNav from "../AccountNav.jsx";
+import "dotenv/cofig"
 
 export default function AccountPage(){
     const[redirect,setRedirect]=useState(null);
@@ -23,7 +24,7 @@ if(ready&&!user&&!redirect){
 }
 
 async function logout() {
-    await axios.post('/logout');
+    await axios.post(`${import.meta.env.VITE_API_URL}/logout`);
     setRedirect('/');
     setUser(null);
 }

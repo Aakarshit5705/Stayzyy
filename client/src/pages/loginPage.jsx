@@ -12,7 +12,7 @@ export default function LoginPage() {
 
     async function handleLogin(ev) {
         ev.preventDefault();
-        const loginPromise = axios.post("/login", { email, password });
+        const loginPromise = axios.post(`${import.meta.env.VITE_API_URL}/login`, { email, password });
 
         toast.promise(loginPromise, {
             loading: 'Logging in...',

@@ -37,7 +37,7 @@ export default function PlacePage() {
             return;
         }
         setLoading(true);
-        axios.get(`/places/${id}`).then(response => {
+        axios.get(`${import.meta.env.VITE_API_URL}/places/${id}`).then(response => {
             setPlace(response.data);
             setLoading(false);
         });

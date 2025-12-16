@@ -22,7 +22,7 @@ import HostingResourcesPage from './pages/hostingResources.jsx';
 import AboutUsPage from './pages/AboutPage.jsx';
 import PrivacyPolicyPage from './pages/PirvacyPage.jsx';
 
-axios.defaults.baseURL="http://localhost:4000/";
+axios.defaults.baseURL=import.meta.env.VITE_API_URL;
 axios.defaults.withCredentials=true;
 
 function App() {

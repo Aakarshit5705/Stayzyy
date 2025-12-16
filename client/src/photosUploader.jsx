@@ -19,7 +19,7 @@ export default function PhotoUploader({addedPhotos,onChange}){
       data.append('photos',files[i]);
     }
     
-     axios.post('/upload',data,{
+     axios.post(`${import.meta.env.VITE_API_URL}/upload`,data,{
       headers:{'Content-Type':'multipart/form-data'}
     }).then(response=>{
       const {data:filenames}=response;

@@ -22,7 +22,7 @@ export default function PaymentPage() {
         setIsProcessing(true); // Set processing to true immediately
 
         try {
-            const response = await axios.post('/bookings', bookingData);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/bookings`, bookingData);
             const bookingId = response.data._id;
 
             setShowSuccessPopup(true);

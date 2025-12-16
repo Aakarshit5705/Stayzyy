@@ -27,7 +27,7 @@ export default function PlacesForm(){
     if(!id){
       return;
     }
-    axios.get('places/'+id)
+    axios.get(`${import.meta.env.VITE_API_URL}places/`+id)
     .then(response=>{
       const{data}=response;
       setTitle(data.title);
@@ -49,14 +49,14 @@ export default function PlacesForm(){
     if(id){
       //update
 
-      await axios.put('/places',{id,...placeData});
+      await axios.put(`${import.meta.env.VITE_API_URL}/places`,{id,...placeData});
       setRedirect(true);
       console.log(redirect);
 
     }
     else{
       //PostNew
-      await axios.post('/places',placeData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/places`,placeData);
       setRedirect(true);
       
     }

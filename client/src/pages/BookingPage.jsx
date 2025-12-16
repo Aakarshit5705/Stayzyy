@@ -14,7 +14,7 @@ export default function BookingPage() {
 
     useEffect(() => {
         if (id) {
-            axios.get('/bookings').then(response => {
+            axios.get(`$${import.meta.env.VITE_API_URL}/bookings`).then(response => {
                 const foundBooking = response.data.find(({ _id }) => _id === id);
                 if (foundBooking) {
                     setBooking(foundBooking);
@@ -26,7 +26,7 @@ export default function BookingPage() {
     const handleCancelBooking = async () => {
         const toastId = toast.loading('Cancelling your booking...');
         try {
-            await axios.delete(`/bookings/${id}`);
+            await axios.delete(`${import.meta.env.VITE_API_URL}/bookings/${id}`);
             toast.success('Booking cancelled successfully!', { id: toastId });
             navigate('/account/bookings');
         } catch (err) {

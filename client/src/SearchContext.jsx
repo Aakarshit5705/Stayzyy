@@ -31,7 +31,7 @@ export function SearchContextProvider({ children }) {
             if (term) {
                 params.append('destination', term);
             }
-            const response = await axios.get(`/places?${params.toString()}`);
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/places?${params.toString()}`);
             setPlaces(response.data);
         } catch (error) {
             console.error("Failed to fetch filtered places:", error);
